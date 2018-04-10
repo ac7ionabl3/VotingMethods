@@ -1,0 +1,215 @@
+<!doctype html>
+
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>Live Blog</title>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <link rel="canonical" href="https://github.com/ac7ionabl3/VotingMethods/edit/master/docs/index.html">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
+  <style amp-custom>
+        .carousel .slide > amp-img > img {
+          object-fit: contain;
+        }
+        amp-social-share {
+          margin-right: 8px;
+          font-family: 'Roboto';
+        }
+        .heading {
+          padding: 1rem;
+          font-family: 'Roboto';
+        }
+        .heading > #summary {
+          font-weight: 500;
+          font-family: 'Roboto';
+        }
+        .heading > small {
+          color: #656565;
+          font-family: 'Roboto';
+        }
+        .date {
+          color: #a8a3ae;
+          font-size: 12px;
+          font-family: 'Roboto';
+        }
+        .blog {
+          padding: 0;
+          min-width: 70%;
+          background: #fff;
+          font-family: 'Roboto';
+        }
+        .blog p {
+          margin: 0 16px;
+          font-family: 'Roboto';
+        }
+        .blog .text {
+          color: black;
+          padding-top: 0;
+          font-family: 'Roboto';
+        }
+        .blog .title {
+          color: white;
+          position: relative;
+          top: -48px;
+          margin: 0 16px;
+          height: 0;
+          padding-bottom: 16px;
+          font-family: 'Roboto';
+        }
+        .blog .social-share {
+          line-height:36sp;
+          display: flex;
+          padding-bottom: 16px;
+          padding-top: 16px;
+          font-family: 'Roboto';
+        }
+        #live-list-update-button {
+          position: fixed;
+          top: 10px;
+          right: 16px;
+          font-family: 'Roboto';
+        }
+        @media (max-width: 600px) {
+          #live-list-update-button {
+            top: 60px;
+          }
+        }
+    .pagination {
+      display: inline-block;
+      padding: 0;
+    }
+    amp-live-list [pagination] nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pagination li {
+      display: inline;
+      padding: 10px;
+      list-style-type: none;
+    }
+    amp-img {max-width:100%; height:auto}
+        
+        <title>NIST Voting Methods Working Group - DEV FORK - NOT THE OFFICIAL NIST REPO </title>
+        </style>
+</head>
+<!-- AMP Analytics --><script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+<!-- #################################################################### -->
+<body>
+<!-- Google Tag Manager -->
+<amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M9H593K&gtm.url=SOURCE_URL" data-credentials="include">
+</amp-analytics>
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-82464439-3"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          },
+          "trackEvent": {
+            "selector": "#event-test",
+            "on": "click",
+            "request": "event",
+            "vars": {
+              "eventCategory": "ui-components",
+              "eventAction": "click"
+            }
+          }
+        }
+      }
+    </script>
+    </amp-analytics>
+  
+  <br>
+   <div id="letter">
+    <h3 class="title">NIST Voting Methods Working Group - DEV FORK - NOT THE OFFICIAL NIST REPO </h3>
+  </div>
+<section class="heading">
+    <h1>NIST Voting Methods Working Group - DEV FORK - NOT THE OFFICIAL NIST REPO</h1>
+    <p>
+      <small class="date">2018</small>
+    </p>
+    <p>
+      <small>Lauren Lochridge, WG Chair, Editor, Standard Architect & Authors & Members of NIST Voting Methods Working Group</small>
+    </p>
+    <br>
+    <p id="summary"></p>
+  <p>
+  </section>
+  <amp-live-list layout="container" data-poll-interval="15000" data-max-items-per-page="5" id="amp-live-list-insert-blog">
+    <button id="live-list-update-button" update on="tap:amp-live-list-insert-blog.update" class="ampstart-btn caps">You have updates</button> 
+  <!-- ITEMS START HERE -->
+    <div items>
+          <div id="post1" data-sort-time="20180317154937">
+        <div class="ampstart-card m1 blog">    
+          <h4 class="title">Metallic and Glimmer</h4>
+          <p class="date">3/17/2018</p>
+      </div>
+            <div>
+            <p class="text">In this section ...   <a href=http://.html>NIST 1500-X Section X </a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+    
+    <div items>
+          <div id="post2" data-sort-time="20180317154937">
+        <div class="ampstart-card m1 blog">    
+          <h4 class="title">Section Item 2, placeholder</h4>
+          <p class="date">3/17/2018</p>
+      </div>
+            <div>
+            <p class="text">In this section ...   <a href=http://.html>NIST 1500-X Section X </a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+     
+        </div>
+    </div>
+      </amp-live-list>
+               <!--  FOOTER STARTS HERE -->
+</body>
+</html>
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+API
+Training
+Shop
+Blog
+About
