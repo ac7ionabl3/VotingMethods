@@ -1,0 +1,980 @@
+<!doctype html>
+
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>Live Blog</title>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-app-banner" src="https://cdn.ampproject.org/v0/amp-app-banner-0.1.js"></script>
+  <link rel="canonical" href="https://ac7ionabl3.github.io/VotingMethods.github.io/index.html">
+     <!--  OR for static S3 website hosting vmwg.ac7ionabl3.com/index.html -->
+  <!--  OR, once deployed https://pages.nist.gov/VotingMethods/index.html -->
+  <!-- https://ac7ionabl3.github.io/VotingMethods.github.io/index.html -->
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700" rel="stylesheet">
+  <style amp-custom>
+        .carousel .slide > amp-img > img {
+          object-fit: contain;
+        }
+        amp-social-share {
+          margin-right: 8px;
+          font-family: 'Roboto';
+        }
+        .heading {
+          padding: 1rem;
+          font-family: 'Roboto';
+        }
+        .heading > #summary {
+          font-weight: 500;
+          font-family: 'Roboto';
+        }
+        .heading > small {
+          color: #656565;
+          font-family: 'Roboto';
+        }
+        .date {
+          color: #a8a3ae;
+          font-size: 12px;
+          font-family: 'Roboto';
+        }
+        .blog {
+          padding: 0;
+          min-width: 70%;
+          background: #fff;
+          font-family: 'Roboto';
+        }
+        .blog p {
+          margin: 0 16px;
+          font-family: 'Roboto';
+        }
+        .blog .text {
+          color: black;
+          padding-top: 0;
+          font-family: 'Roboto';
+        }
+        .blog .title {
+          color: white;
+          position: relative;
+          top: -48px;
+          margin: 0 16px;
+          height: 0;
+          padding-bottom: 16px;
+          font-family: 'Roboto';
+        }
+        .blog .social-share {
+          line-height:36sp;
+          display: flex;
+          padding-bottom: 16px;
+          padding-top: 16px;
+          font-family: 'Roboto';
+        }
+        #live-list-update-button {
+          position: fixed;
+          top: 10px;
+          right: 16px;
+          font-family: 'Roboto';
+        }
+        @media (max-width: 600px) {
+          #live-list-update-button {
+            top: 60px;
+          }
+        }
+    .pagination {
+      display: inline-block;
+      padding: 0;
+    }
+            .anno h2 a {color: #000; text-decoration: none; display: block;}
+		.anno h2 a:hover {color: #003c8f; background-image: none;}
+		.anno h2 a:focus {color: #003c8f}
+.c5anno .anno {
+	padding-top: 0pt;
+	padding-bottom: 10pt;
+	line-height: 1.1500000000000001;
+	orphans: 2;
+	widows: 2;
+	text-align: left
+}
+    amp-live-list [pagination] nav {
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pagination li {
+      display: inline;
+      padding: 10px;
+      list-style-type: none;
+    }
+    amp-img {max-width:100%; height:auto}
+    .mdc-components {
+  box-sizing: border-box;
+  display: flex;
+  font-family: Roboto;
+  margin: 64px auto;
+  width: 1664px;
+}
+.mdc-components__section {
+  display: flex;
+}
+.mdc-components__column {
+  display: flex;
+  height: 664px;
+  flex-direction: column;
+  margin: 0 8px;
+  width: 400px;
+}
+.mdc-components .flex {
+  flex: 1;
+  box-sizing: border-box;
+}
+.mdc-components p {
+  color: #616161;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.mdc-component > p {
+  color: #616161;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 0;
+}
+.mdc-component__section {
+  align-items: center;
+  background-color: #EEEEEE;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  width: 400px;
+}
+.mdc-component__section--size-narrow {
+  height: 152px;
+}
+.mdc-component__section__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+.mdc-component__section__content__frame {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.mdc-component__section--size-full {
+  height: 620px;
+}
+.mdc-component__containers {
+  align-items: flex-start;
+  display: flex;
+  height: 292px;
+  flex-direction: row;
+}
+.mdc-component__containers__primary__only p {
+  display: none;
+}
+.mdc-component__containers__primary, .mdc-component__containers__secondary {
+  display: flex;
+  align-items: center;
+}
+.mdc-component__containers__primary > p, .mdc-component__containers__secondary > p {
+  color: #616161;
+  font-size: 11px;
+  font-weight: bold;
+}
+.mdc-component__containers__primary__only {
+  margin-top: 40px;
+}
+.mdc-component__containers__secondary {
+  margin-left: 80px;
+}
+.mdc-component__containers__primary, .mdc-component__containers__secondary {
+  flex-direction: column;
+}
+.mdc-component__containers__primary > p, .mdc-component__containers__secondary > p {
+  margin: 25px 0 15px;
+}
+.mdc-component__containers__primary > *[class^="mdc-"]:not(:nth-child(2)), .mdc-component__containers__secondary > *[class^="mdc-"]:not(:nth-child(2)) {
+  margin-top: 40px;
+}
+.mdc-component__containers[dir-horizontal] {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.mdc-component__containers[dir-horizontal] .mdc-component__containers__primary__only {
+  margin-top: 0;
+}
+.mdc-component__containers[dir-horizontal] .mdc-component__containers__secondary {
+  margin-left: 0;
+  margin-top: 12px;
+}
+.mdc-component__containers[dir-horizontal] .mdc-component__containers__primary, .mdc-component__containers[dir-horizontal] .mdc-component__containers__secondary {
+  flex-direction: row;
+}
+.mdc-component__containers[dir-horizontal] .mdc-component__containers__primary > p, .mdc-component__containers[dir-horizontal] .mdc-component__containers__secondary > p {
+  margin: 0 16px 0 0;
+  text-align: right;
+  width: 60px;
+}
+.mdc-component__containers[dir-horizontal] .mdc-component__containers__primary > *[class^="mdc-"], .mdc-component__containers[dir-horizontal] .mdc-component__containers__secondary > *[class^="mdc-"] {
+  margin-top: 0;
+  margin-right: 60px;
+}
+*, :after, :before {
+  box-sizing: inherit;
+}
+@media all and (max-width: 1712px) {
+  .mdc-components {
+    margin: 32px auto;
+    width: 832px;
+  }
+  .mdc-components__section {
+    flex-direction: column;
+  }
+  .mdc-components__column {
+    margin-bottom: 64px;
+  }
+}
+@media all and (max-width: 880px) {
+  .mdc-components {
+    flex-direction: column;
+    width: 416px;
+  }
+}
+
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-button,
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-fab {
+      background-color: #1564bf;
+      color: #ffffff;
+    }
+
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-button--plain,
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-fab--plain {
+      background-color: transparent;
+      color: #1564bf;
+    }
+
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-button,
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-fab {
+      background-color: #424242;
+      color: #ffffff;
+    }
+
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-button--plain,
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-fab--plain {
+      background-color: transparent;
+      color: #424242;
+    }
+
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-button--raised.mdc-ripple-upgraded::before,
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-button--raised.mdc-ripple-upgraded::after {
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-button--plain.mdc-ripple-upgraded::before,
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-button--plain.mdc-ripple-upgraded::after {
+      background-color: rgba(21, 100, 191, 0.06);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-fab.mdc-ripple-upgraded::after {
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__primary .mdc-fab--plain.mdc-ripple-upgraded::after {
+      background-color: rgba(21, 100, 191, 0.16);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-button--raised.mdc-ripple-upgraded::before,
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-button--raised.mdc-ripple-upgraded::after {
+      background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-button--plain.mdc-ripple-upgraded::before,
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-button--plain.mdc-ripple-upgraded::after {
+      background-color: rgba(66, 66, 66, 0.06);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-fab.mdc-ripple-upgraded::after {
+      background-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .mdc-component__buttons .mdc-component__containers__secondary .mdc-fab--plain.mdc-ripple-upgraded::after {
+      background-color: rgba(66, 66, 66, 0.16);
+    }
+  
+  .mdc-component__selection .mdc-component__containers__primary__only .mdc-snackbar {
+    transform: translate(-50%,-100%);
+  }
+
+  .mdc-component__selection .mdc-snackbar {
+    left: auto !important;
+    transform: translate(-28%,-164%);
+    position: absolute;
+    min-width: 240px;
+    margin-left: -16px;
+    width: 240px;
+  }
+
+  .mdc-component__selection .mdc-snackbar__secondary {
+    transform: translate(-28%,-40%);
+  }
+
+  .mdc-component__selection .mdc-snackbar__text,
+  .mdc-component__selection .mdc-snackbar__action-button {
+    opacity: 1;
+    font-size: 12px;
+  }
+  
+    .mdc-component__switches .mdc-component__containers__primary .mdc-checkbox__native-control:checked:not(:disabled) ~ .mdc-checkbox__background,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-checkbox__native-control:indeterminate:not(:disabled) ~ .mdc-checkbox__background,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle {
+      background-color: #1564bf;
+      border-color: #1564bf;
+    }
+
+    .mdc-component__switches .mdc-component__containers__primary .mdc-switch__native-control:checked~.mdc-switch__background::before,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-switch__native-control:checked~.mdc-switch__background .mdc-switch__knob::before,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-switch__native-control:checked~.mdc-switch__background .mdc-switch__knob {
+      background-color: #1564bf;
+    }
+
+    .mdc-component__switches .mdc-component__containers__primary .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle {
+      border-color: #1564bf;
+    }
+
+    .mdc-component__switches .mdc-component__containers__primary .mdc-checkbox__background::before,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-radio__background::before {
+      background-color: #1564bf;
+    }
+
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-checkbox__native-control:checked:not(:disabled) ~ .mdc-checkbox__background,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-checkbox__native-control:indeterminate:not(:disabled) ~ .mdc-checkbox__background,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle {
+      background-color: #424242;
+      border-color: #424242;
+    }
+
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-switch__native-control:checked~.mdc-switch__background::before,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-switch__native-control:checked~.mdc-switch__background .mdc-switch__knob::before,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-switch__native-control:checked~.mdc-switch__background .mdc-switch__knob {
+      background-color: #424242;
+    }
+
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__outer-circle {
+      border-color: #424242;
+    }
+
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-checkbox__background::before,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-radio__background::before {
+      background-color: #424242;
+    }
+
+    .mdc-component__switches .mdc-component__containers__primary .mdc-checkbox.mdc-ripple-upgraded--unbounded::before,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-checkbox.mdc-ripple-upgraded--unbounded::after,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-radio.mdc-ripple-upgraded--unbounded::before,
+    .mdc-component__switches .mdc-component__containers__primary .mdc-radio.mdc-ripple-upgraded--unbounded::after {
+      background-color: rgba(21, 100, 191, 0.14);
+    }
+
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-checkbox.mdc-ripple-upgraded--unbounded::before,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-checkbox.mdc-ripple-upgraded--unbounded::after,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-radio.mdc-ripple-upgraded--unbounded::before,
+    .mdc-component__switches .mdc-component__containers__secondary .mdc-radio.mdc-ripple-upgraded--unbounded::after {
+      background-color: rgba(66, 66, 66, 0.14);
+    }
+  
+  .mdc-component__cards .mdc-card {
+    background-color: #ffffff;
+    height: 316px;
+    width: 262px;
+  }
+
+  .mdc-component__cards .mdc-card__title,
+  .mdc-component__cards .mdc-card__subtitle {
+    font-size: 11px;
+    line-height: 17px;
+  }
+
+  .mdc-component__cards .mdc-card__subtitle {
+    color: #707070;
+  }
+
+  .mdc-component__cards .mdc-card__header {
+    align-items: center;
+    display: flex;
+    height: 40px;
+    padding: 0 16px 20px;
+  }
+
+  .mdc-component__cards .demo-card__avatar {
+    background: #bdbdbd;
+    height: 40px;
+    width: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+  }
+
+  .mdc-component__cards .mdc-card__supporting-text {
+    font-size: 10px;
+  }
+
+  .mdc-component__cards .demo-card--with-avatar .mdc-card__title,
+  .mdc-component__cards .demo-card--with-avatar .mdc-card__subtitle {
+    margin-left: 56px;
+  }
+
+  .mdc-component__cards .mdc-card__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px 16px 16px;
+  }
+
+  .mdc-component__cards .mdc-card__media {
+    height: 140px;
+    overflow: hidden;
+    padding: 0
+  }
+
+  .mdc-component__cards .mdc-card__media .material-image {
+    top: 64px;
+    position: relative;
+  }
+
+  .mdc-component__cards .mdc--theme-primary {
+    background-color: #1564bf;
+    color: #ffffff;
+  }
+
+  .mdc-component__cards .mdc--theme-secondary {
+    background-color: #424242;
+    color: #ffffff;
+  }
+
+  .mdc-component__cards .material-image .material-image__background {
+    fill: #003b8e;
+  }
+
+  .mdc-component__cards .material-image .material-image--shape-circle,
+  .mdc-component__cards .material-image .material-image--shape-triangle {
+    fill: #1564bf;
+  }
+
+  .mdc-component__cards .material-image .material-image--shape-intersection {
+    fill: #003b8e;
+  }
+
+  .mdc-component__cards .mdc-button--raised.mdc--theme-primary.mdc-ripple-upgraded::after {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .mdc-component__cards .mdc-button--raised.mdc--theme-secondary.mdc-ripple-upgraded::after {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+  
+  .mdc-component__menu .mdc-toolbar {
+    background-color: #424242;
+    z-index: 1;
+  }
+
+  .mdc-component__menu .mdc-toolbar {
+    height: 56px;
+    padding: 16px;
+  }
+
+  .mdc-component__menu .mdc-permanent-drawer {
+    border-right: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+  }
+
+  .mdc-component__menu .mdc-backdrop {
+    background-color: rgba(0, 0, 0, .50);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+
+  .mdc-component__menu .nav-header {
+    height: 140px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .mdc-component__menu .nav-header .material-image {
+    position: relative;
+    top: -50px;
+  }
+
+  .mdc-component__menu .mdc-permanent-drawer {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  .mdc-component__menu .mdc-list-item {
+    font-weight: 400;
+  }
+
+  .mdc-component__menu .mdc-list-item.mdc-ripple-upgraded {
+    left: 0;
+  }
+
+  .mdc-component__menu .mdc-list-item.mdc-ripple-upgraded::before,
+  .mdc-component__menu .mdc-list-item.mdc-ripple-upgraded::after {
+    background-color: rgba(21, 100, 191, 0.06);
+  }
+
+  .mdc-component__menu .mdc-permanent-drawer .mdc-permanent-drawer--selected::before,
+  .mdc-component__menu .mdc-permanent-drawer .mdc-list-item:active::before {
+    background-color: #1564bf;
+    opacity: .16;
+  }
+
+  .mdc-component__menu .mdc-permanent-drawer--selected.mdc-list-item .mdc-list-item__start-detail,
+  .mdc-component__menu .mdc-permanent-drawer .mdc-permanent-drawer--selected {
+    color: inherit;
+  }
+
+  .mdc-component__menu .material-image__background {
+    fill: #003b8e;
+  }
+
+  .mdc-component__menu .material-image--shape-circle,
+  .mdc-component__menu .material-image--shape-triangle {
+    fill: #1564bf;
+  }
+
+  .mdc-component__menu .material-image--shape-intersection {
+    fill: #003b8e;
+  }
+  
+  .mdc-component__textfield .mdc-component__containers {
+    margin-top: 40px;
+  }
+
+  .mdc-component__textfield .mdc-component__containers__secondary {
+    padding: 17px 0;
+  }
+
+  .mdc-component__textfield .mdc-component__containers p {
+    padding-bottom: 20px;
+  }
+
+  .mdc-component__textfield .mdc-textfield {
+    margin-right: 14px !important;
+  }
+
+  .mdc-component__textfield .mdc-textfield__input {
+    width: 264px;
+  }
+
+  .mdc-component__textfield .mdc-textfield__label {
+    bottom: 12px;
+  }
+
+  .mdc-component__textfield .mdc-textfield--theme-primary .mdc-textfield__label {
+    color: #1564bf;
+  }
+
+  .mdc-component__textfield .mdc-textfield--theme-primary .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:focus {
+    border-color: #1564bf;
+  }
+
+  .mdc-component__textfield .mdc-textfield--theme-secondary .mdc-textfield__label {
+    color: #424242;
+  }
+
+  .mdc-component__textfield .mdc-textfield--theme-secondary .mdc-textfield:not(.mdc-textfield--upgraded) .mdc-textfield__input:focus {
+    border-color: #424242;
+  }
+  
+  .mdc-component__toolbar .app-bar {
+    background-color: #003b8e;
+    display: block;
+    height: 20px;
+    width: 100%;
+  }
+
+  .mdc-component__toolbar .mdc-toolbar {
+    height: 56px;
+    padding: 16px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .mdc-component__toolbar .mdc-toolbar__section {
+    align-items: center;
+  }
+
+  .mdc-component__toolbar .mdc-toolbar__title {
+    padding-left: 8px;
+  }
+
+  .mdc-component__toolbar .material-icons {
+    color: #ffffff;
+  }
+
+  .mdc-component__toolbar .material-image {
+    position: relative;
+    top: -64px;
+  }
+
+  .mdc-component__toolbar main {
+    background-color: white;
+    height: calc(100% - 48px);
+  }
+
+  .mdc-component__toolbar .cover-image__frame {
+    display: block;
+    height: 220px;
+    position: relative;
+    width: 100%;
+  }
+
+  .mdc-component__toolbar .cover-image {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mdc-component__toolbar .mdc-fab {
+    position: absolute;
+    bottom: -25px;
+    right: 28px;
+  }
+
+  .mdc-component__toolbar .content {
+    font-size: 13px;
+    line-height: 20px;
+    padding: 50px 35px;
+  }
+
+  .mdc-component__toolbar .mdc-component__section__content__frame::before {
+    bottom: 0;
+    content: "";
+    background-image: url(//storage.googleapis.com/demos-in-spec/images/android-bottom.png);
+    background-repeat: no-repeat;
+    height: 48px;
+    position: absolute;
+    width: 100%;
+    z-index: 9999999;
+  }
+
+  .mdc-component__toolbar .mdc--theme-primary {
+    background-color: #1564bf;
+    color: #ffffff;
+  }
+
+  .mdc-component__toolbar .mdc--theme-secondary {
+    background-color: #424242;
+    color: #ffffff;
+  }
+
+  .mdc-component__toolbar .material-image .material-image__background {
+    fill: #1b1b1b;
+  }
+
+  .mdc-component__toolbar .material-image .material-image--shape-circle,
+  .mdc-component__toolbar .material-image .material-image--shape-triangle {
+    fill: #6d6d6d;
+  }
+
+  .mdc-component__toolbar .material-image .material-image--shape-intersection {
+    fill: #1b1b1b;
+  }
+
+  .mdc-component__toolbar .mdc-icon-toggle::before,
+  .mdc-component__toolbar .mdc-icon-toggle::after {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  .mdc-component__toolbar .mdc-fab.mdc--theme-primary.mdc-ripple-upgraded::after {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .mdc-component__toolbar .mdc-fab.mdc--theme-secondary.mdc-ripple-upgraded::after {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+  
+    
+        </style>
+        <title>NIST Voting Methods Working Group </title>
+ 
+</head>
+
+<body>
+
+<!-- #################################################################### -->
+<!-- Google Tag Manager -->
+<amp-analytics config="https://www.googletagmanager.com/amp.json?id=GTM-M9H593K&gtm.url=SOURCE_URL" data-credentials="include">
+</amp-analytics>
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-82464439-3"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          },
+          "trackEvent": {
+            "selector": "#event-test",
+            "on": "click",
+            "request": "event",
+            "vars": {
+              "eventCategory": "ui-components",
+              "eventAction": "click"
+            }
+          }
+        }
+      }
+    </script>
+    </amp-analytics>
+  <div>
+  <amp-img src="images/NIST_Banner2000WX600H.jpg" layout="responsive" width="100%"></amp-img>
+  </div>
+  <br>
+   <div id="letter">
+    <h3 class="title">NIST Voting Methods Working Group </h3>
+  </div>
+<section class="heading">
+    <h1>NIST Voting Methods Working Group, NIST SP 1500-10X Voting Methods Models Standard</h1>
+    <p>
+      <small class="date">2018</small>
+    </p>
+    <p>   
+      <small>John P. Wack</small> 
+      <small>Lauren Lochridge</small>
+      <small>Philip B. Stark</small>
+      <small>Herb Deutsch, ES&S</small> 
+      <small>George Gilbert</small>
+      <small>Chris Hughes</small>
+      <small>...Authors List...</small>
+    <p>
+    <small> VMWG Officers</small>
+      <small>VMWG Co-Chair, Architect, Editor: Lauren Lochridge</small>
+      <small>NIST Co-Chair: John Wack, </small>
+      <small>VMWG Co-Chair for Auditability and Risk Management: Philip B. Stark</small>
+      <small>Acknowledgements...,</small>
+      <small>And the Members of NIST Voting Methods Working Group</small>
+     <small><a href="https://collaborate.nist.gov/voting/bin/view/Voting/VotingMethodsModels">Membership List</a>
+    </small></p>
+    <br>
+    <p id="summary"></p>
+  <p>
+  </section>
+  <amp-live-list layout="container" data-poll-interval="15000" data-max-items-per-page="5" id="amp-live-list-insert-blog">
+    <button id="live-list-update-button" update on="tap:amp-live-list-insert-blog.update" class="ampstart-btn caps">You have updates</button> 
+    <!-- ########################################################################################### -->
+  <!-- ITEMS START HERE, 1 CARD PER ITEM/ENTRY. Push notification happens when a new card/post is added -->    <!-- ########################################################################################### -->
+     <!-- EXPERIMENT ADDING MDC -->
+        <!-- ###############CARD ONE ############## -->
+    <div items>
+          <div id="post1" data-sort-time="20180317154937">
+        <div class="ampstart-card m1 blog mdc-component mdc-component__cards">    
+         
+        <h4 class="title">Section 3.1.3 Tabulation Methods Process Models</h4>
+          <p class="date">3/17/2018</p>
+      </div>
+            <div>
+            <p class="text"></p>
+              <p class="text">Overview, Tabulation Methods Process Flow Diagrams </p>
+              <p class="text">Intro, brief 2-3 sentences, todo here </p>
+          <p class="text">Contents </p>    
+<ol start="3.1.3">
+<p class="text"> Multi-Contest Multi-Voting Method Ballot Tabulation Methods </p>
+
+	<li>Plurality, Majority, N of M </li>
+	<ol>
+	<li>PLURALITY (First-Past-The-Post (FPTP) / Winner-Takes-All)</li>
+	<li>MAJORITY </li>
+	<li>N of M </li>
+    <li>Test Conditions and Expected Outcomes</li>
+      </ol>
+      </li>
+ 
+ <!--    
+      <li>
+	<ol>
+      <li>Test Conditions and Expected Outcomes</li>
+      </ol>
+      </li>
+   -->  
+       
+
+      <li> Straight Party </li>
+	<ol>
+	  <li> Straight Party with Associated Contest</li>
+      <li>SP Test Conditions and Expected Outcomes</li>
+      </ol>
+      </li>
+SP Test Conditions and Expected Outcomes
+      <li>
+	<ol>
+      <li>Test Conditions and Expected Outcomes</li>
+      </ol>
+      </li>
+N-OF-M X
+
+MULTI-ROUND / Ranked-Choice-Voting / RCV X
+      <li>
+	<ol>
+      <li>Test Conditions and Expected Outcomes</li>
+      </ol>
+      </li>
+PLURALITY : First-Past-The-Post (FPTP) / Winner-Takes-All X
+MAJORITY X
+CUMULATIVE X
+APPROVAL X
+              
+               <amp-img src="https://ac7ionabl3.github.io/VotingMethods.github.io/tabulation/images/ContestProcessHighLevelDiagram180328HD.jpg"> </amp-img>
+<br>
+<!--  https://vmwg.ac7ionabl3.com/NIST1500-10X_3-1-3.html -->
+<!--  https://vmwg.ac7ionabl3.com/ContestProcessHighLevel180328HD.html -->
+              <a href="https://ac7ionabl3.github.io/VotingMethods.github.io/tabulation/NIST_VMWG_1500-10X_3-1-3.html">ContestProcessHighLevel NIST 1500-10X Section 3.1.3</a>
+         
+          <h4 class="title">NIST 1500-10X Section 3.1.3.1 Plurality & Majority Contest Tabulation Method</h4>
+          <p class="date">3/17/2018</p>
+          
+<br>
+        <!--  <a href="https://ac7ionabl3.github.io/VotingMethods.github.io/tabulation/NIST_VMWG_1500-10X_3-1-3.html">ContestProcessHighLevel NIST 1500-10X Section 3.1.3</a> -->
+      </div>
+            <div>
+            <p class="text"><a href="https://ac7ionabl3.github.io/VotingMethods.github.io/tabulation/NIST_VMWG_3-1-3-1_PluralityMajorityContestTabulation.html">NIST SP 1500-10X Voting Methods Standard Section 3.1.3.1 Plurality Majority Contest Tabulation </a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post1"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+    
+      <!-- ###############CARD THREE ############## -->
+              <div id="post3" data-sort-time="20180317154937">
+        <div class="ampstart-card m3 blog">
+     <!-- <h2>Some Text if needed <a id="link_targets"></a></h2>    -->
+          <h4 class="title" id="NIST_VMWG_1500-10X_3-1-3-2">NIST 1500-10X Section 3.1.3.2 Straight Party </h4>
+          <p class="date">4/12/2018</p>
+            
+            <a href="https://ac7ionabl3.github.io/VotingMethods.github.io/tabulation/NIST_VMWG_3-1-3-2_StraightPartyContestTabulation.html">NIST 1500-X Voting Methods Models Section 3.1.3.2 Straight Party Contest Tabulation</a></p>
+<br>
+            
+      </div>
+            <div>
+          
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post3"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post3"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post3"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+    
+      <!-- ###############CARD FOUR ############## -->
+                  <div id="post4" data-sort-time="20180317154937">
+        <div class="ampstart-card m4 blog">    
+          <h4 class="title">NIST 1500-10X Voting Methods Section 3.1.3.4 </h4>
+          <p class="date">4/12/2018</p>
+      </div>
+      <!--  https://vmwg.ac7ionabl3.com/index.html -->
+            <div>
+            <p class="text"><a href=https://vmwg.ac7ionabl3.com/NIST-10XVotingMethodsSection3-1-3-4.html>NIST-10X Voting Methods Section 3.1.3.4</a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post4"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post4"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post4"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+    
+      <!-- ###############CARD FIVE ############## -->
+                  <div id="post5" data-sort-time="20180317154937">
+        <div class="ampstart-card m5 blog">    
+          <h4 class="title">NIST 1500-10X Section 3.1.3.5 </h4>
+          <p class="date">4/12/2018</p>
+      </div>
+            <div>
+            <p class="text">In this section ...   <a href=http://.html>NIST 1500-X Section X </a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post5"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post5"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post5"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+    
+      <!-- ###############CARD SIX  ############## -->
+                  <div id="post6" data-sort-time="20180317154937">
+        <div class="ampstart-card m6 blog">    
+          <h4 class="title">NIST 1500-10X Section 3.1.3.6 </h4>
+          <p class="date">4/12/2018</p>
+      </div>
+            <div>
+            <p class="text">In this section ...   <a href=http://.html>NIST 1500-X Section X </a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post6"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post6"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post6"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+    
+      <!-- ###############CARD SEVEN ############## -->
+                  <div id="post7" data-sort-time="20180317154937">
+        <div class="ampstart-card m7 blog">    
+          <h4 class="title">NIST 1500-10X Section 3.1.3.7 </h4>
+          <p class="date">4/12/2018</p>
+      </div>
+            <div>
+            <p class="text">In this section ...   <a href=http://.html>NIST 1500-X Section X </a></p>
+<br>
+            <p class="social-share">
+              <amp-social-share type="twitter" width="45" height="33" data-param-url="AMPDOC_URL#post7"></amp-social-share>             
+              <amp-social-share type="gplus" width="45" height="33" data-param-url="AMPDOC_URL#post7"></amp-social-share>
+              <amp-social-share type="email" width="45" height="33" data-param-url="AMPDOC_URL#post7"></amp-social-share>
+            </p>
+          </div>
+             <br> <br> <br>
+    </div> 
+     
+        </div>
+    </div>
+      </amp-live-list>
+               <!--  FOOTER STARTS HERE -->
+</body>
+</html>
